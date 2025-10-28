@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme Colors */
+@layer base {
+  :root {
+    --background: 255 240 245; /* Baby Pink Soft */
+    --foreground: 40 40 40;
+
+    --card: 255 245 250;
+    --card-foreground: 40 40 40;
+
+    --primary: 255 182 193; /* Light Pink */
+    --primary-foreground: 255 255 255;
+
+    --secondary: 255 209 220;
+    --secondary-foreground: 40 40 40;
+
+    --accent: 255 200 213;
+    --accent-foreground: 40 40 40;
+
+    --border: 255 182 193;
+    --muted-foreground: 110 110 110;
+  }
+
+  .dark {
+    --background: 20 20 20;
+    --foreground: 240 240 240;
+  }
+}
+
+@layer utilities {
+  .bg-background {
+    @apply bg-[rgb(var(--background))];
+  }
+  .text-foreground {
+    @apply text-[rgb(var(--foreground))];
+  }
+  .bg-card {
+    @apply bg-[rgb(var(--card))];
+  }
+  .border-border {
+    @apply border-[rgb(var(--border))];
+  }
+  .text-muted-foreground {
+    @apply text-[rgb(var(--muted-foreground))];
+  }
+  .bg-primary {
+    @apply bg-[rgb(var(--primary))];
+  }
+  .text-primary-foreground {
+    @apply text-[rgb(var(--primary-foreground))];
+  }
+  .bg-secondary {
+    @apply bg-[rgb(var(--secondary))];
+  }
+  .text-secondary-foreground {
+    @apply text-[rgb(var(--secondary-foreground))];
+  }
+  .bg-accent {
+    @apply bg-[rgb(var(--accent))];
+  }
+  .text-accent-foreground {
+    @apply text-[rgb(var(--accent-foreground))];
+  }
+}
+
+
+@layer base {
+  * {
+    @apply border-transparent;
+  }
+}
+
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+    20%, 40%, 60%, 80% { transform: translateX(10px); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes slideIn {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  @keyframes heartBeat {
+    0%, 100% { transform: scale(1); }
+    10%, 30% { transform: scale(1.1); }
+    20%, 40% { transform: scale(0.9); }
+  }
+
+  .animate-shake {
+    animation: shake 0.5s ease-in-out;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  .animate-slideIn {
+    animation: slideIn 0.8s ease-out;
+  }
+
+  .animate-heartBeat {
+    animation: heartBeat 1.5s ease-in-out infinite;
+  }
+
